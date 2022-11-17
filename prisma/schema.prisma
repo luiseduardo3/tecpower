@@ -1,0 +1,67 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Usuario {
+  id       Int       @id @default(autoincrement())
+  name     String
+  idade    String
+  estado   String
+  cidade   String
+  email    String    @unique
+  senha    String
+  carteira String?   @default("0")
+  nivel    String?   @default("1")
+  ativo    Boolean?  @default(true)
+  criado   DateTime? @default(now())
+  tipo     Tipo      @default(USER)
+  photo    Photo[]
+  tarefa   Tarefa[]
+  despesa  Despesa[]
+
+  @@map("usuarios")
+}
+
+model Photo {
+  id         Int      @id @default(autoincrement())
+  url        String
+  legenda    String?
+  usuario_id Int?
+  Usuario    Usuario? @relation(fields: [usuario_id], references: [id])
+
+  @@map("photos")
+}
+
+model Tarefa {
+  id         Int      @id @default(autoincrement())
+  titulo     String
+  body       String
+  concluido  Boolean
+  Usuario    Usuario? @relation(fields: [usuario_id], references: [id])
+  usuario_id Int?
+
+  @@map("tarefa")
+}
+
+model Despesa {
+  id         Int      @id @default(autoincrement())
+  titulo     String
+  valor      Int
+  Usuario    Usuario? @relation(fields: [usuario_id], references: [id])
+  usuario_id Int?
+
+  @@map("despesa")
+}
+
+enum Tipo {
+  USER
+  ADMIN
+}
