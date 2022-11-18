@@ -2,3 +2,8 @@
   background-color: red;
   color: fff;
 }
+.link {
+  background-color: blue;
+  border-radius: 5px;
+  padding: 2px;
+}

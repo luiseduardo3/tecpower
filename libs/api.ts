@@ -2,7 +2,7 @@ import prisma from "./prisma";
 
 export default {
   getPegarTodosUser: async (page: number) => {
-    let perPage = 5; //itens por página
+    let perPage = 2; //itens por página
 
     //offset itens
     let offset = 0;

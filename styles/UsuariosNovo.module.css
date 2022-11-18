@@ -1,0 +1,11 @@
+.link {
+  background-color: blue;
+}
+
+.input {
+  background-color: rgb(70, 57, 57);
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+  margin-bottom: 15px;
+}

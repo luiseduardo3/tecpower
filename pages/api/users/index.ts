@@ -11,7 +11,7 @@ const handlerGet: NextApiHandler = async (req, res) => {
 
   const users = await api.getPegarTodosUser(parseInt(page as string)); // ta vindo de libs/api
 
-  res.json(users);
+  res.json({ status: true, usuarios: users });
 };
 
 //POST iserindo usuarios
