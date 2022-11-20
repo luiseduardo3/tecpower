@@ -10,12 +10,15 @@ import { useState } from "react";
 import { redirect } from "next/dist/server/api-utils";
 import Link from "next/link";
 import axios from "axios";
+import { useSession } from "next-auth/react";
 
 type Props = {
   users: User[];
 };
 
 const Usuarios = ({ users }: Props) => {
+  const { data: session, status: sessionStatus } = useSession();
+
   const [showMore, setShowMore] = useState(true);
 
   const [loading, setLoading] = useState(false);
@@ -53,22 +56,37 @@ const Usuarios = ({ users }: Props) => {
       <Head>
         <title>Usuários</title>
       </Head>
-      <h1 className={styles.h1}>Página de usuarios</h1>
 
-      <Link className={styles.link} href={`/usuarios/novo`}>
-        Novo Usuário
-      </Link>
+      {sessionStatus === "loading" && <div>Carregando...</div>}
 
-      <ul>
-        {userList.map((item, index) => (
-          <li key={index}>
-            {item.name} - {item.id} - {item.estado} - {item.email}
-          </li>
-        ))}
-      </ul>
+      {sessionStatus === "unauthenticated" && (
+        <div>Você não tem permissão para acessar esté conteúdo</div>
+      )}
 
-      {showMore && <button onClick={CarregarMaisUser}>Carregar mais</button>}
-      {!showMore && <button onClick={CarregarMenosUser}>Carregar menos</button>}
+      {sessionStatus === "authenticated" && (
+        <>
+          <h1 className={styles.h1}>Página de usuarios</h1>
+
+          <Link className={styles.link} href={`/usuarios/novo`}>
+            Novo Usuário
+          </Link>
+
+          <ul>
+            {userList.map((item, index) => (
+              <li key={index}>
+                {item.name} - {item.id} - {item.estado} - {item.email}
+              </li>
+            ))}
+          </ul>
+
+          {showMore && (
+            <button onClick={CarregarMaisUser}>Carregar mais</button>
+          )}
+          {!showMore && (
+            <button onClick={CarregarMenosUser}>Carregar menos</button>
+          )}
+        </>
+      )}
     </div>
   );
 };
