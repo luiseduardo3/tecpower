@@ -24,6 +24,7 @@ export default {
         email: true,
         ativo: true,
         estado: true,
+        cidade: true,
         tipo: true,
       },
       orderBy: {
@@ -62,17 +63,6 @@ export default {
       where: {
         email: email,
         ativo: true,
-      },
-      select: {
-        // selecionar os dados que aparece
-        id: true,
-        name: true,
-        estado: true,
-        cidade: true,
-        idade: true,
-        email: true,
-        carteira: true,
-        nivel: true,
       },
     });
     return user;

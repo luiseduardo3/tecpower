@@ -11,14 +11,18 @@ import { redirect } from "next/dist/server/api-utils";
 import Link from "next/link";
 import axios from "axios";
 import { useSession } from "next-auth/react";
+import { GetServerSideProps } from "next";
+import { unstable_getServerSession } from "next-auth";
+import { authOptions } from "../api/auth/[...nextauth]";
+import { AuthUser } from "../../types/AuthUser";
 
 type Props = {
   users: User[];
+  loggedUser: AuthUser;
 };
 
-const Usuarios = ({ users }: Props) => {
-  const { data: session, status: sessionStatus } = useSession();
-
+const Usuarios = ({ users, loggedUser }: Props) => {
+  console.log("USER", loggedUser.tipo);
   const [showMore, setShowMore] = useState(true);
 
   const [loading, setLoading] = useState(false);
@@ -56,47 +60,47 @@ const Usuarios = ({ users }: Props) => {
       <Head>
         <title>Usuários</title>
       </Head>
+      <h1 className={styles.h1}>Página de usuarios</h1>
+      <div>
+        Olá {loggedUser.name}. {loggedUser.tipo}
+      </div>
 
-      {sessionStatus === "loading" && <div>Carregando...</div>}
+      <Link className={styles.link} href={`/usuarios/novo`}>
+        Novo Usuário
+      </Link>
 
-      {sessionStatus === "unauthenticated" && (
-        <div>Você não tem permissão para acessar esté conteúdo</div>
-      )}
+      <ul>
+        {userList.map((item, index) => (
+          <li key={index}>
+            {item.name} - {item.id} - {item.estado} - {item.cidade}
+          </li>
+        ))}
+      </ul>
 
-      {sessionStatus === "authenticated" && (
-        <>
-          <h1 className={styles.h1}>Página de usuarios</h1>
-
-          <Link className={styles.link} href={`/usuarios/novo`}>
-            Novo Usuário
-          </Link>
-
-          <ul>
-            {userList.map((item, index) => (
-              <li key={index}>
-                {item.name} - {item.id} - {item.estado} - {item.email}
-              </li>
-            ))}
-          </ul>
-
-          {showMore && (
-            <button onClick={CarregarMaisUser}>Carregar mais</button>
-          )}
-          {!showMore && (
-            <button onClick={CarregarMenosUser}>Carregar menos</button>
-          )}
-        </>
-      )}
+      {showMore && <button onClick={CarregarMaisUser}>Carregar mais</button>}
+      {!showMore && <button onClick={CarregarMenosUser}>Carregar menos</button>}
     </div>
   );
 };
 
-export const getServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const session = await unstable_getServerSession(
+    context.req,
+    context.res,
+    authOptions
+  );
+  if (!session) {
+    return {
+      redirect: { destination: "/", permanent: true },
+    };
+  }
+
   // DRY = Não se repita o mesmo codigo
   const users = await api.getPegarTodosUser(0);
 
   return {
     props: {
+      loggedUser: session.user,
       users,
     },
   };

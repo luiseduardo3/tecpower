@@ -3,7 +3,7 @@ import NextAuth, { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 
 import api from "../../../libs/api";
-import { AuthUSer } from "../../../types/AuthUser";
+import { AuthUser } from "../../../types/AuthUser";
 
 export const authOptions: NextAuthOptions = {
   secret: process.env.NEXTAUTH_SECRET,
@@ -27,6 +27,7 @@ export const authOptions: NextAuthOptions = {
               email: user.email,
               carteira: user.carteira,
               nivel: user.nivel,
+              tipo: user.tipo,
             } as any;
           }
         }
@@ -43,7 +44,7 @@ export const authOptions: NextAuthOptions = {
     },
     session: async ({ session, token }) => {
       if (token) {
-        session.user = token.user as AuthUSer;
+        session.user = token.user as AuthUser;
       }
       return session;
     },
