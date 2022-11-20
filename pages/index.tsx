@@ -7,6 +7,10 @@ import { signIn, signOut, useSession } from "next-auth/react";
 export default function Home() {
   const { data: session } = useSession();
 
+  if (session) {
+    console.log("USER", session.user);
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -20,7 +24,7 @@ export default function Home() {
 
         {session && (
           <>
-            Olá {session.user?.name}.
+            Olá {session.user?.name}. meu id é {session.user.id}
             <button onClick={() => signOut()}>Sair</button>
           </>
         )}

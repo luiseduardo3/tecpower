@@ -56,6 +56,28 @@ export default {
       },
     });
   },
+
+  getUserFromEmail: async (email: string) => {
+    const user = await prisma.usuario.findFirst({
+      where: {
+        email: email,
+        ativo: true,
+      },
+      select: {
+        // selecionar os dados que aparece
+        id: true,
+        name: true,
+        estado: true,
+        cidade: true,
+        idade: true,
+        email: true,
+        carteira: true,
+        nivel: true,
+      },
+    });
+    return user;
+  },
+
   getUser: async (id: number) => {
     const user = await prisma.usuario.findFirst({
       where: {
