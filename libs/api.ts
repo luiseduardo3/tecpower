@@ -10,7 +10,7 @@ export default {
       offset = (page - 1) * perPage;
     }
 
-    const users = await prisma.usuario.findMany({
+    const users = await prisma.usuarios.findMany({
       skip: offset, // pular
       take: perPage, // quantos itens vai pegar
 
@@ -44,7 +44,7 @@ export default {
     carteira: string,
     nivel: string
   ) => {
-    return await prisma.usuario.create({
+    return await prisma.usuarios.create({
       data: {
         name: name,
         idade: idade,
@@ -59,7 +59,7 @@ export default {
   },
 
   getUserFromEmail: async (email: string) => {
-    const user = await prisma.usuario.findFirst({
+    const user = await prisma.usuarios.findFirst({
       where: {
         email: email,
         ativo: true,
@@ -69,7 +69,7 @@ export default {
   },
 
   getUser: async (id: number) => {
-    const user = await prisma.usuario.findFirst({
+    const user = await prisma.usuarios.findFirst({
       where: {
         id: id,
         ativo: true,
@@ -120,14 +120,14 @@ export default {
       data.nivel = nivel;
     }
 
-    const updateUser = await prisma.usuario.update({
+    const updateUser = await prisma.usuarios.update({
       where: { id: id },
       data: data,
     });
     return updateUser;
   },
   deleteUser: async (id: number) => {
-    const deleteUser = await prisma.usuario.delete({
+    const deleteUser = await prisma.usuarios.delete({
       where: {
         id: id,
       },

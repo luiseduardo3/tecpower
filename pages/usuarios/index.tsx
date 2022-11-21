@@ -22,7 +22,6 @@ type Props = {
 };
 
 const Usuarios = ({ users, loggedUser }: Props) => {
-  console.log("USER", loggedUser.tipo);
   const [showMore, setShowMore] = useState(true);
 
   const [loading, setLoading] = useState(false);
@@ -62,7 +61,7 @@ const Usuarios = ({ users, loggedUser }: Props) => {
       </Head>
       <h1 className={styles.h1}>Página de usuarios</h1>
       <div>
-        Olá {loggedUser.name}. {loggedUser.tipo}
+        Olá {loggedUser.name}. {loggedUser.tipo} - {loggedUser.nivel}
       </div>
 
       <Link className={styles.link} href={`/usuarios/novo`}>
@@ -91,7 +90,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   );
   if (!session) {
     return {
-      redirect: { destination: "/", permanent: true },
+      redirect: { destination: "/", permanent: false },
     };
   }
 
