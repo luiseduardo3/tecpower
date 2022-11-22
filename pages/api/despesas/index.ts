@@ -12,7 +12,7 @@ const handlePostDespesa: NextApiHandler = async (req, res) => {
       console.log(e);
       res.json({ error: "Algo deu muito errado :(" });
     });
-  res.status(201).json(novaDespesa);
+  res.status(201).json({ status: true, novadespesa: novaDespesa });
 };
 const handler: NextApiHandler = (req, res) => {
   switch (req.method) {
