@@ -6,16 +6,14 @@ import prisma from "../../../libs/prisma";
 const handlePostDespesa: NextApiHandler = async (req, res) => {
   const { titulo, valor, userId } = req.body;
 
-  const addDespesa = await prisma.despesa.createMany({
-    data: {
-      titulo: titulo,
-      valor: valor,
-      usuariosId: userId,
-    },
-  });
-  res.json(addDespesa);
+  const novaDespesa = await apiDespesa
+    .addDespesa(titulo, valor, parseInt(userId))
+    .catch((e) => {
+      console.log(e);
+      res.json({ error: "Algo deu muito errado :(" });
+    });
+  res.status(201).json(novaDespesa);
 };
-
 const handler: NextApiHandler = (req, res) => {
   switch (req.method) {
     case "POST":
