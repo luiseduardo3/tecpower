@@ -7,31 +7,33 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model usuarios {
-  id       Int           @id @default(autoincrement())
+model despesa {
+  id     Int    @id @default(autoincrement())
+  titulo String
+  valor  String
+  userId Int
+  user   user   @relation(fields: [userId], references: [id], map: "Despesa_userId_fkey")
+
+  @@index([userId], map: "Despesa_userId_fkey")
+}
+
+model user {
+  id       Int       @id @default(autoincrement())
   name     String
   idade    String
   estado   String
   cidade   String
-  email    String        @unique
+  email    String    @unique(map: "User_email_key")
   senha    String
-  carteira String?       @default("0")
-  nivel    String?       @default("1")
-  ativo    Boolean?      @default(true)
-  criado   DateTime?     @default(now())
-  tipo     usuarios_tipo @default(USER)
-  des1     String?
-  des2     String?
-  des3     String?
-  des4     String?
-  des5     String?
-  des6     String?
-  des7     String?
-  des8     String?
-  des9     String?
+  carteira String?   @default("0")
+  nivel    String?   @default("1")
+  ativo    Boolean?  @default(true)
+  criado   DateTime? @default(now())
+  tipo     user_tipo @default(USER)
+  despesa  despesa[]
 }
 
-enum usuarios_tipo {
+enum user_tipo {
   USER
   ADMIN
 }

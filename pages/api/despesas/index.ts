@@ -1,19 +1,19 @@
 import { NextApiHandler } from "next";
 import apiDespesa from "../../../libs/apiDespesa";
 
+import prisma from "../../../libs/prisma";
+
 const handlePostDespesa: NextApiHandler = async (req, res) => {
-  const { titulo, valor } = req.body;
+  const { titulo, valor, userId } = req.body;
 
-  const novaDespesa = await apiDespesa
-    .addDespesa(titulo, parseInt(valor))
-    .catch((e) => {
-      console.log(e);
-      res.json({ error: "Algo deu errado" });
-    });
-
-  if (novaDespesa) {
-    res.status(201).json({ status: true, novadespesa: novaDespesa });
-  }
+  const addDespesa = await prisma.despesa.createMany({
+    data: {
+      titulo: titulo,
+      valor: valor,
+      usuariosId: userId,
+    },
+  });
+  res.json(addDespesa);
 };
 
 const handler: NextApiHandler = (req, res) => {
