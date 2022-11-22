@@ -74,6 +74,7 @@ const UsuarioNovo = () => {
       <Link className={styles.link} href={`/usuarios/`}>
         Voltar
       </Link>
+      <a href="/login">Login</a>
       <h1 className={styles.h1}>Página de usuarios - Novo</h1>
 
       <input
