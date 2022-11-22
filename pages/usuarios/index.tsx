@@ -59,6 +59,15 @@ const Usuarios = ({ users, loggedUser }: Props) => {
       <Head>
         <title>Usuários</title>
       </Head>
+
+      <div>
+        <ul>
+          <li>
+            <Link href={"/"}>Página Inicial</Link>
+          </li>
+        </ul>
+      </div>
+
       <h1 className={styles.h1}>Página de usuarios</h1>
       <div>
         Olá {loggedUser.name}. {loggedUser.tipo} - {loggedUser.nivel}
