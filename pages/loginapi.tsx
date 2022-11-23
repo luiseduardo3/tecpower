@@ -3,8 +3,9 @@ import { useState } from "react";
 
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/router";
+import axios from "axios";
 
-const Login = () => {
+const LoginApi = () => {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
@@ -14,6 +15,33 @@ const Login = () => {
 
   const router = useRouter();
 
+  const login = async (email: string, senha: string) => {
+    // colocar em outra pasta um service por exemplo
+
+    // 1. pegar o CSRF
+    // 2. Validar as Credentials
+    // 3. Verificar o Session
+    const csrFReq = await axios.get("/api/auth/csrf");
+
+    if (csrFReq.data.csrfToken) {
+      const authReq = await axios.post("/api/auth/callback/credentials", {
+        json: true,
+        csrfToken: csrFReq.data.csrfToken,
+        email,
+        senha,
+      });
+
+      if (authReq.status === 200) {
+        const userData = await axios.get("/api/auth/session");
+        if (userData.data.user) {
+          return true;
+        }
+      }
+    }
+
+    return false;
+  };
+
   const handleSubmit = async () => {
     if (!email && !senha) {
       setErrorTexto("Preencha os campos");
@@ -22,34 +50,26 @@ const Login = () => {
 
     setErrorTexto("");
     setLoading(true);
-    const request = await signIn("credentials", {
-      redirect: false,
-      email,
-      senha,
-    });
+
+    const logged = await login(email, senha); // usar só esse
+
     setLoading(false);
 
-    console.log(request);
-    if (request && request.ok) {
-      if (router.query.callbackUrl) {
-        router.push(router.query.callbackUrl as string);
-      } else {
-        router.push("/");
-      }
+    if (logged) {
+      window.location.href = "/";
     } else {
-      setErrorTexto("Acesso negado");
+      setErrorTexto("Acesso Negado");
     }
   };
-
   return (
     <div>
       <div>
         <Head>
-          <title>Login</title>
+          <title>Login API</title>
         </Head>
       </div>
 
-      <h1>Login</h1>
+      <h1>Login API</h1>
 
       <input
         type="email"
@@ -77,4 +97,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginApi;
