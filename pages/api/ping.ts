@@ -1,8 +1,7 @@
-import {NextApiHandler} from 'next'
+import { NextApiHandler } from "next";
 
-const handler: NextApiHandler = (req, res) => {
-
-  res.json({pong: true})
-}
+const handler: NextApiHandler = async (req, res) => {
+  res.json({ pong: true });
+};
 
 export default handler;

@@ -22,10 +22,10 @@ export default {
         id: true,
         name: true,
         email: true,
-        ativo: true,
-        estado: true,
-        cidade: true,
-        tipo: true,
+        ativo: false,
+        estado: false,
+        cidade: false,
+        tipo: false,
       },
       orderBy: {
         //ordenação, pode usar em nome também por exemplo name: "asc"
@@ -63,6 +63,9 @@ export default {
       where: {
         email: email,
         ativo: true,
+      },
+      include: {
+        despesa: true,
       },
     });
     return user;

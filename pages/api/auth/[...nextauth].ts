@@ -28,6 +28,7 @@ export const authOptions: NextAuthOptions = {
               carteira: user.carteira,
               nivel: user.nivel,
               tipo: user.tipo,
+              despesa: user.despesa,
             } as any;
           }
         }
