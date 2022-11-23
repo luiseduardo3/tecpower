@@ -8,14 +8,19 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
-  const [temErro, setTemErro] = useState(false);
+  const [errorTexto, setErrorTexto] = useState("");
 
   const [loading, setLoading] = useState(false);
 
   const router = useRouter();
 
   const handleSubmit = async () => {
-    setTemErro(false);
+    if (!email && !senha) {
+      setErrorTexto("Preencha os campos");
+      return;
+    }
+
+    setErrorTexto("");
     setLoading(true);
     const request = await signIn("credentials", {
       redirect: false,
@@ -32,7 +37,7 @@ const Login = () => {
         router.push("/");
       }
     } else {
-      setTemErro(true);
+      setErrorTexto("Acesso negado");
     }
   };
 
@@ -62,9 +67,11 @@ const Login = () => {
         disabled={loading} //quando o loading for true o disabled vai ficar true
       />
 
-      <button onClick={handleSubmit}>Entrar</button>
+      <button onClick={handleSubmit} disabled={loading}>
+        Entrar
+      </button>
 
-      {temErro && "Acesso negado"}
+      {errorTexto}
       {loading && "carregando..."}
     </div>
   );
