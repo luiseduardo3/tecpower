@@ -1,0 +1,259 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background-color: #004aad;
+  margin: 0;
+  padding: 5px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  margin-top: 30px;
+  padding: 0;
+}
+.headerFechar {
+  display: flex;
+  width: auto;
+  font-size: 20px;
+  margin-left: 24px;
+  border-radius: 5px;
+  padding: 8px;
+  background-color: #fff;
+}
+.headerFechar:hover {
+  display: flex;
+  width: auto;
+  font-size: 20px;
+  margin-left: 24px;
+  border-radius: 5px;
+  padding: 8px;
+  background-color: #fff;
+  opacity: 0.7;
+}
+
+.headerFechar a {
+  display: flex;
+  text-decoration: none;
+  text-align: center;
+  color: #004aad;
+  font-weight: 700;
+}
+
+.headerEditar {
+  display: flex;
+  width: auto;
+  font-size: 20px;
+  margin-right: 24px;
+  border-radius: 5px;
+  padding: 5px;
+  padding: 8px;
+  background-color: #fff;
+  color: #004aad;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.headerEditar:hover {
+  display: flex;
+  width: auto;
+  font-size: 20px;
+  margin-right: 24px;
+  border-radius: 5px;
+  padding: 5px;
+  padding: 8px;
+  background-color: #fff;
+  color: #00306e;
+  cursor: pointer;
+  font-weight: 700;
+  opacity: 0.7;
+}
+
+.headerEditar a {
+  display: flex;
+  text-decoration: none;
+  text-align: center;
+  color: #004aad;
+  font-weight: 700;
+}
+.imageArea img {
+  display: flex;
+  width: 180px;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  margin: 10px;
+}
+
+.inforArea {
+  display: flex;
+  background-color: #fff;
+  flex-direction: column;
+  width: auto;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  margin-bottom: 100px;
+  border-radius: 10px;
+}
+
+.inforArea .infoTipo {
+  display: flex;
+  padding: 10px;
+  text-align: center;
+  background-color: #004aad;
+  color: #fff;
+  border-bottom: 1px solid #ccc;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.InfoNome,
+.InfoIdade,
+.InfoEmail,
+.InfoSenha,
+.inforSaldo {
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  margin: 4px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.InfoNome h4,
+.InfoIdade h4,
+.InfoEmail h4,
+.InfoSenha h4,
+.inforSaldo h4 {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  font-size: 20px;
+  margin: 4px;
+  background-color: #004aad;
+  color: #fff;
+  border-radius: 10px;
+}
+
+@media (min-width: 600px) {
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    max-width: 900px;
+    height: 100vh;
+    background-color: #004aad;
+    margin: auto;
+    padding: 5px;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 900px;
+    margin-top: 30px;
+    padding: 0;
+  }
+  .headerFechar {
+    display: flex;
+    width: auto;
+    font-size: 20px;
+    margin-left: 24px;
+    border-radius: 5px;
+    padding: 8px;
+    background-color: #fff;
+  }
+
+  .headerFechar a {
+    display: flex;
+    text-decoration: none;
+    text-align: center;
+    color: #004aad;
+    font-weight: 700;
+  }
+
+  .headerEditar {
+    display: flex;
+    width: auto;
+    font-size: 20px;
+    margin-right: 24px;
+    border-radius: 5px;
+    padding: 5px;
+    padding: 8px;
+    background-color: #fff;
+    color: #004aad;
+    cursor: pointer;
+    font-weight: 700;
+  }
+
+  .imageArea img {
+    display: flex;
+    width: 180px;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin: 10px;
+  }
+
+  .inforArea {
+    display: flex;
+    background-color: #fff;
+    flex-direction: column;
+    width: auto;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    margin-bottom: 100px;
+    border-radius: 10px;
+  }
+
+  .inforArea .infoTipo {
+    display: flex;
+    padding: 10px;
+    text-align: center;
+    background-color: #004aad;
+    color: #fff;
+    border-bottom: 1px solid #ccc;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+
+  .InfoNome,
+  .InfoIdade,
+  .InfoEmail,
+  .InfoSenha,
+  .inforSaldo {
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    margin: 4px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 5px;
+  }
+
+  .InfoNome h4,
+  .InfoIdade h4,
+  .InfoEmail h4,
+  .InfoSenha h4,
+  .inforSaldo h4 {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-size: 20px;
+    margin: 4px;
+    background-color: #004aad;
+    color: #fff;
+    border-radius: 10px;
+  }
+}

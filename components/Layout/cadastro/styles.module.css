@@ -1,0 +1,94 @@
+.container {
+  background-color: #fff;
+  padding: 20px 24px;
+}
+.header {
+  display: flex;
+  width: 100vw;
+  margin-top: 10px;
+  padding: 0;
+  margin-bottom: 20px;
+}
+.headerFechar {
+  display: flex;
+  width: auto;
+  margin-left: 24px;
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 20px;
+  background-color: #004aad;
+}
+
+.headerFechar a {
+  display: flex;
+  text-decoration: none;
+  text-align: center;
+  color: #fff;
+  font-weight: 700;
+}
+
+.header2 {
+  font-weight: bold;
+  font-size: 36px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.subtitulo {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: #004aad;
+  text-align: center;
+  margin: auto;
+  width: 220px;
+  padding-bottom: 40px;
+  border-bottom: 1.5px solid #004aad;
+  position: relative;
+}
+.linha {
+  border-top: 1.5px solid #e2e2e2;
+  border-bottom: -1.5px;
+}
+.formArea {
+  margin-top: 56px;
+}
+.inputArea {
+  margin-bottom: 32px;
+}
+.inputArea h5 {
+  color: #1b1b1b;
+}
+.inputArea .label {
+  font-weight: 700;
+}
+
+.inputArea .select {
+  padding: 5px;
+  margin: 10px;
+  font-weight: 700;
+  font-size: 15px;
+  background-color: #ccc;
+  color: #004aad;
+}
+.JaTemArea {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  margin: auto;
+  color: #004aad;
+  width: fit-content;
+  position: relative;
+  padding-bottom: 62px;
+}
+.JaTemArea a {
+  font-weight: 600;
+  text-decoration: none;
+  color: #004aad;
+  margin: 5px;
+}
+.cadastrarArea {
+  margin-top: 62px;
+}

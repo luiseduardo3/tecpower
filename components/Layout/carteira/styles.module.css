@@ -1,0 +1,303 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background-color: #004aad;
+  margin: 0;
+  padding: 5px;
+}
+
+.header {
+  display: flex;
+  width: 100vw;
+  margin-top: 30px;
+  padding: 0;
+}
+.headerFechar {
+  display: flex;
+  width: auto;
+  margin-left: 24px;
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 20px;
+  background-color: #fff;
+}
+
+.headerFechar a {
+  display: flex;
+  text-decoration: none;
+  text-align: center;
+  color: #004aad;
+  font-weight: 700;
+}
+.conteudoArea {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 350px;
+  margin: 1px;
+}
+
+.conteudoArea .carteira img {
+  display: flex;
+  width: 120px;
+  height: 120px;
+  align-items: center;
+  padding: 5px;
+}
+
+.conteudoArea .saldo {
+  display: flex;
+  font-size: 30px;
+  align-items: center;
+  padding: 20px;
+  color: #004aad;
+  background-color: #fff;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.conteudoArea .saldo p {
+  color: green;
+}
+
+.conteudoArea .depositar {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.conteudoArea .depositar a {
+  text-decoration: none;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  font-weight: 700;
+}
+
+.conteudoHistorico {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+  height: 380px;
+  background-color: #fff;
+  border-radius: 20px;
+  margin-bottom: 80px;
+}
+
+.entrada {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 240px;
+  margin: 10px;
+  font-size: 20px;
+}
+.entradaconteudo h3 {
+  background-color: #ccc;
+  color: green;
+  text-align: center;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.entradaconteudo .ul .li {
+  display: flex;
+  text-decoration: none;
+  margin: 5px;
+}
+
+.entradaconteudo .ul .li p {
+  color: green;
+}
+
+.saida {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 240px;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.saidaconteudo h3 {
+  background-color: #ccc;
+  color: red;
+  text-align: center;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.saidaconteudo .ul .li {
+  display: flex;
+  text-decoration: none;
+  margin: 5px;
+}
+
+.saidaconteudo .ul .li p {
+  color: red;
+}
+
+@media (min-width: 600px) {
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    max-width: 900px;
+    height: 100vh;
+    background-color: #004aad;
+    margin: auto;
+    padding: 5px;
+  }
+
+  .header {
+    display: flex;
+    width: 900px;
+    margin-top: 30px;
+    padding: 0;
+  }
+  .headerFechar {
+    display: flex;
+    width: auto;
+    margin-left: 24px;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 20px;
+    background-color: #fff;
+  }
+
+  .headerFechar a {
+    display: flex;
+    text-decoration: none;
+    text-align: center;
+    color: #004aad;
+    font-weight: 700;
+  }
+  .conteudoArea {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 350px;
+    margin: 1px;
+  }
+
+  .conteudoArea .carteira img {
+    display: flex;
+    width: 120px;
+    height: 120px;
+    align-items: center;
+    padding: 5px;
+  }
+
+  .conteudoArea .saldo {
+    display: flex;
+    font-size: 30px;
+    align-items: center;
+    padding: 20px;
+    color: #004aad;
+    background-color: #fff;
+    border-radius: 10px;
+    font-weight: 700;
+  }
+
+  .conteudoArea .saldo p {
+    color: green;
+  }
+
+  .conteudoArea .depositar {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-size: 18px;
+  }
+
+  .conteudoArea .depositar a {
+    text-decoration: none;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-weight: 700;
+  }
+
+  .conteudoHistorico {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: 380px;
+    background-color: #fff;
+    border-radius: 20px;
+    margin-bottom: 80px;
+  }
+
+  .entrada {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 240px;
+    margin: 10px;
+    font-size: 20px;
+  }
+  .entradaconteudo h3 {
+    background-color: #ccc;
+    color: green;
+    text-align: center;
+    border-radius: 10px;
+    padding: 5px;
+  }
+
+  .entradaconteudo .ul .li {
+    display: flex;
+    text-decoration: none;
+    margin: 5px;
+  }
+
+  .entradaconteudo .ul .li p {
+    color: green;
+  }
+
+  .saida {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 240px;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .saidaconteudo h3 {
+    background-color: #ccc;
+    color: red;
+    text-align: center;
+    border-radius: 10px;
+    padding: 5px;
+  }
+
+  .saidaconteudo .ul .li {
+    display: flex;
+    text-decoration: none;
+    margin: 5px;
+  }
+
+  .saidaconteudo .ul .li p {
+    color: red;
+  }
+}

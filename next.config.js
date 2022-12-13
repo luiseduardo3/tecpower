@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: false,
   images: {
-    domains: ["www.google.com.br"],
+    domains: ["www.google.com.br", "storage.googleapis.com"],
   },
   headers: async () => {
     return [
