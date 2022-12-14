@@ -1,133 +1,137 @@
-import Head from "next/head";
+export const Teste = () => {
+  
+}
 
-import styles from "../../styles/UsuariosNovo.module.css";
+// import Head from "next/head";
 
-import api from "../../libs/api";
+// import styles from "../../styles/UsuariosNovo.module.css";
 
-import { User } from "../../types/User";
+// import api from "../../libs/api";
 
-import { useState } from "react";
-import Link from "next/link";
-import { useRouter } from "next/router";
+// import { User } from "../../types/User";
 
-import axios from "axios";
+// import { useState } from "react";
+// import Link from "next/link";
+// import { useRouter } from "next/router";
 
-const UsuarioNovo = () => {
-  const router = useRouter(); //para usar quando a requisão dá certo
+// import axios from "axios";
 
-  const [nameInput, setNameInput] = useState("");
-  const [idadeInput, SetIdadeInput] = useState("");
-  const [estadoinput, setEstadoInput] = useState("");
-  const [cidadeInput, setCidadeInput] = useState("");
-  const [emailInput, setEmailInput] = useState("");
-  const [senhaInput, setSenhaInput] = useState("");
+// const UsuarioNovo = () => {
+//   const router = useRouter(); //para usar quando a requisão dá certo
 
-  const cadastarUser = async () => {
-    if (
-      nameInput &&
-      idadeInput &&
-      estadoinput &&
-      cidadeInput &&
-      emailInput &&
-      senhaInput
-    ) {
-      // const req = await fetch(`/api/users`, {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      //   body: JSON.stringify({
-      //     name: nameInput,
-      //     idade: idadeInput,
-      //     estado: estadoinput,
-      //     cidade: cidadeInput,
-      //     email: emailInput,
-      //     senha: senhaInput,
-      //   }),
-      // });
-      // const json = await req.json();
+//   const [nameInput, setNameInput] = useState("");
+//   const [idadeInput, SetIdadeInput] = useState("");
+//   const [estadoinput, setEstadoInput] = useState("");
+//   const [cidadeInput, setCidadeInput] = useState("");
+//   const [emailInput, setEmailInput] = useState("");
+//   const [senhaInput, setSenhaInput] = useState("");
 
-      const json = await axios.post(`/api/users`, {
-        // essa linha substitui as de cima
-        name: nameInput,
-        idade: idadeInput,
-        estado: estadoinput,
-        cidade: cidadeInput,
-        email: emailInput,
-        senha: senhaInput,
-      });
+//   const cadastarUser = async () => {
+//     if (
+//       nameInput &&
+//       idadeInput &&
+//       estadoinput &&
+//       cidadeInput &&
+//       emailInput &&
+//       senhaInput
+//     ) {
+//       // const req = await fetch(`/api/users`, {
+//       //   method: "POST",
+//       //   headers: {
+//       //     "Content-Type": "application/json",
+//       //   },
+//       //   body: JSON.stringify({
+//       //     name: nameInput,
+//       //     idade: idadeInput,
+//       //     estado: estadoinput,
+//       //     cidade: cidadeInput,
+//       //     email: emailInput,
+//       //     senha: senhaInput,
+//       //   }),
+//       // });
+//       // const json = await req.json();
 
-      if (json.status) {
-        // se deu certo vai para o router.push
-        router.push(`/usuarios`);
-      } else {
-        // se deu errado mostrar o erro
-        alert(json.data.error);
-      }
-    }
-  };
-  return (
-    <div>
-      <Head>
-        <title>Usuários - Novo</title>
-      </Head>
-      <Link className={styles.link} href={`/usuarios/`}>
-        Voltar
-      </Link>
-      <a href="/login">Login</a>
-      <h1 className={styles.h1}>Página de usuarios - Novo</h1>
+//       const json = await axios.post(`/api/users`, {
+//         // essa linha substitui as de cima
+//         name: nameInput,
+//         idade: idadeInput,
+//         estado: estadoinput,
+//         cidade: cidadeInput,
+//         email: emailInput,
+//         senha: senhaInput,
+//       });
 
-      <input
-        className={styles.input}
-        type="text"
-        value={nameInput}
-        placeholder="Seu nome, ou Apelido"
-        onChange={(e) => setNameInput(e.target.value)}
-      />
+//       if (json.status) {
+//         // se deu certo vai para o router.push
+//         router.push(`/usuarios`);
+//       } else {
+//         // se deu errado mostrar o erro
+//         alert(json.data.error);
+//       }
+//     }
+//   };
+//   return (
+//     <div>
+//       <Head>
+//         <title>Usuários - Novo</title>
+//       </Head>
+//       <Link className={styles.link} href={`/usuarios/`}>
+//         Voltar
+//       </Link>
+//       <a href="/login">Login</a>
+//       <h1 className={styles.h1}>Página de usuarios - Novo</h1>
 
-      <input
-        className={styles.input}
-        type="text"
-        value={idadeInput}
-        placeholder="Qual sua idade"
-        onChange={(e) => SetIdadeInput(e.target.value)}
-      />
+//       <input
+//         className={styles.input}
+//         type="text"
+//         value={nameInput}
+//         placeholder="Seu nome, ou Apelido"
+//         onChange={(e) => setNameInput(e.target.value)}
+//       />
 
-      <input
-        className={styles.input}
-        type="text"
-        value={estadoinput}
-        placeholder="Seu Estado"
-        onChange={(e) => setEstadoInput(e.target.value)}
-      />
+//       <input
+//         className={styles.input}
+//         type="text"
+//         value={idadeInput}
+//         placeholder="Qual sua idade"
+//         onChange={(e) => SetIdadeInput(e.target.value)}
+//       />
 
-      <input
-        className={styles.input}
-        type="text"
-        value={cidadeInput}
-        placeholder="Sua cidade"
-        onChange={(e) => setCidadeInput(e.target.value)}
-      />
+//       <input
+//         className={styles.input}
+//         type="text"
+//         value={estadoinput}
+//         placeholder="Seu Estado"
+//         onChange={(e) => setEstadoInput(e.target.value)}
+//       />
 
-      <input
-        className={styles.input}
-        type="email"
-        value={emailInput}
-        placeholder="Seu e-mail"
-        onChange={(e) => setEmailInput(e.target.value)}
-      />
+//       <input
+//         className={styles.input}
+//         type="text"
+//         value={cidadeInput}
+//         placeholder="Sua cidade"
+//         onChange={(e) => setCidadeInput(e.target.value)}
+//       />
 
-      <input
-        className={styles.input}
-        type="password"
-        value={senhaInput}
-        placeholder="Crie sua senha"
-        onChange={(e) => setSenhaInput(e.target.value)}
-      />
+//       <input
+//         className={styles.input}
+//         type="email"
+//         value={emailInput}
+//         placeholder="Seu e-mail"
+//         onChange={(e) => setEmailInput(e.target.value)}
+//       />
 
-      <button onClick={cadastarUser}>Cadastar</button>
-    </div>
-  );
-};
+//       <input
+//         className={styles.input}
+//         type="password"
+//         value={senhaInput}
+//         placeholder="Crie sua senha"
+//         onChange={(e) => setSenhaInput(e.target.value)}
+//       />
 
-export default UsuarioNovo;
+//       <button onClick={cadastarUser}>Cadastar</button>
+//     </div>
+//   );
+// };
+
+// export default UsuarioNovo;
