@@ -9,13 +9,10 @@ export const EdiatarPerfilLayout = () => {
         <div className={styles.headerFechar}>
           <Link href={"/perfil"}>Fechar</Link>
         </div>
-        <div className={styles.headerEditar}>
-          <Link href={"/"}>Cancelar</Link>
-        </div>
       </div>
 
       <div className={styles.headerTitulo}>
-        <h1 className={styles.h1}>ATUALIZAR DADOS</h1>
+        ATUALIZAR DADOS
       </div>
 
       <div className={styles.inforArea}>

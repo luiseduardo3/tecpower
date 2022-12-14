@@ -24,6 +24,10 @@ const CarteiraLayout = () => {
         </div>
       </div>
 
+      <div className={styles.relatorio}>
+          <Link href="/relatorio">HISTÓRICO COMPLETO</Link>
+        </div>
+
       <div className={styles.conteudoHistorico}>
         <div className={styles.entrada}>
           <div className={styles.entradaconteudo}>
@@ -63,6 +67,8 @@ const CarteiraLayout = () => {
             </ul>
           </div>
         </div>
+
+        
       </div>
       <MenuBotoes />
     </div>

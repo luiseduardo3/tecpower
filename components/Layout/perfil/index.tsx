@@ -20,6 +20,7 @@ const PerfilLayout = () => {
         </div>
       </div>
       <div className={styles.inforArea}>
+        <div className={styles.nivel}>NIVEL  1</div>
         <div className={styles.infoTipo}>
           <h1>#ESTUDANTE</h1>
         </div>

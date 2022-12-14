@@ -1,0 +1,270 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-color: #004aad;
+    margin: 0;
+    padding: 5px;
+  }
+  
+  .header {
+    display: flex;
+    width: 100vw;
+    margin-top: 30px;
+    padding: 0;
+  }
+  .headerFechar {
+    display: flex;
+    width: auto;
+    margin-left: 24px;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 20px;
+    background-color: #fff;
+  }
+  
+  .headerFechar a {
+    display: flex;
+    text-decoration: none;
+    text-align: center;
+    color: rgb(46, 29, 126);
+    font-weight: 700;
+  }
+
+  .relatorioImg img {
+    display: flex;
+    margin: auto;
+    padding: 0;
+    width: 50px;
+    height: 50px;
+  }
+
+  .relatorioImg p {
+    display: flex;
+    margin: 9px;
+    color: #fff;
+  }
+
+.tituloBtn {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: auto;
+  margin: 10px;
+}
+
+.tituloBtn .h5 {
+  display: flex;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  align-items: center;
+  background-color: #fff;
+}
+
+.tituloBtn .option {
+  display: flex;
+  margin: 10px;
+  background-color: #fff;
+}
+  .Image img{
+    background-color: red;
+    width: 350px;
+    height: auto;
+    border-radius: 50px;
+  }
+  
+  .config {
+    display: flex;
+    justify-content: space-between;
+    width: 370px;
+    height: 400px;
+    font-size: 19px;
+    font-weight: 700;
+  }
+  
+  .config ul li a {
+    display: flex;
+    justify-content: center;
+    margin: 4px;
+
+    flex-direction: row;
+    padding: 3px;
+    text-decoration: none;
+  }
+  
+  .config ul li {
+    display: flex;
+    text-decoration: none;
+  }
+  
+  
+  .config ul li img {
+    display: flex;
+    width: 34px;
+    height: 34px;
+    color: #fff;
+    margin: auto;
+  }
+  
+  
+  .config ul li a .texto {
+    display: flex;
+    margin: 19px;
+    justify-content: center;
+    display: flex;
+    color: #fff;
+    font-weight: 400;
+    background-color: #fff;
+    padding: 8px;
+    border-radius: 5px;
+    color: #004aad;
+  }
+  
+  
+  
+  /* .info {
+    display: flex;
+    justify-content: space-between;
+    width: 370px;
+    height: auto;
+    margin-bottom: 20px;
+    font-size: 19px;
+    font-weight: 700;
+    border-radius: 10px;
+  
+  }
+  
+  .info ul li a {
+    display: flex;
+    justify-content: center;
+    margin: 2px;
+    flex-direction: row;
+    padding: 1px;
+    text-decoration: none;
+  }
+  
+  .info ul li {
+    display: flex;
+    text-decoration: none;
+  }
+  
+  .info ul li img {
+    display: flex;
+    width: 34px;
+    height: 34px;
+    margin: auto;
+  }
+  
+  .info ul li a .texto {
+    display: flex;
+    margin: 19px;
+    justify-content: center;
+    display: flex;
+    color: #fff;
+    font-weight: 400;
+  } */
+  
+  
+  @media (min-width: 600px) {
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+      max-width: 900px;
+      height: 100vh;
+      background-color: #004aad;
+      margin: 0;
+      padding: 5px;
+    }
+  
+    .header {
+      display: flex;
+      max-width: 900px;
+      margin-top: 30px;
+      padding: 0;
+    }
+    .headerFechar {
+      display: flex;
+      width: auto;
+      margin-left: 24px;
+      border-radius: 5px;
+      padding: 8px;
+      font-size: 20px;
+      background-color: #fff;
+    }
+  
+    .headerFechar a {
+      display: flex;
+      text-decoration: none;
+      text-align: center;
+      color: rgb(46, 29, 126);
+      font-weight: 700;
+    }
+  
+  
+    .relatorioImg img {
+      display: flex;
+      margin: auto;
+      padding: 0;
+      width: 50px;
+      height: 50px;
+    }
+  
+    .relatorioImg p {
+      display: flex;
+      margin: 9px;
+    }
+    
+    .config {
+      display: flex;
+      justify-content: space-between;
+      width: 370px;
+      height: 400px;
+      font-size: 19px;
+      font-weight: 700;
+    }
+    
+    .config ul li a {
+      display: flex;
+      justify-content: center;
+      margin: 4px;
+  
+      flex-direction: row;
+      padding: 3px;
+      text-decoration: none;
+    }
+    
+    .config ul li {
+      display: flex;
+      text-decoration: none;
+    }
+    
+    
+    .config ul li img {
+      display: flex;
+      width: 34px;
+      height: 34px;
+      color: #fff;
+      margin: auto;
+    }
+    
+    
+    .config ul li a .texto {
+      display: flex;
+      margin: 19px;
+      justify-content: center;
+      display: flex;
+      color: #fff;
+      font-weight: 400;
+      background-color: #fff;
+      padding: 8px;
+      border-radius: 5px;
+      color: #004aad;
+    }
+  }
+  

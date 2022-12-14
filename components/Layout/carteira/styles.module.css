@@ -82,6 +82,19 @@
   font-weight: 700;
 }
 
+.relatorio a {
+  display: flex;
+  text-decoration: none;
+  background-color: #fff;
+  color: #004aad;
+  font-weight: 700;
+  border: 1px solid #004aad;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px;
+  margin-bottom: 10px;
+}
+
 .conteudoHistorico {
   display: flex;
   justify-content: center;
@@ -148,6 +161,8 @@
 .saidaconteudo .ul .li p {
   color: red;
 }
+
+
 
 @media (min-width: 600px) {
   .container {

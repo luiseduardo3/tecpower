@@ -103,6 +103,17 @@
   border-radius: 10px;
 }
 
+.inforArea .nivel {
+  display: flex;
+  margin: 5px;
+  font-size: large;
+padding: 5px;
+  background-color: #004aad;
+  color: rgb(241, 206, 3);
+  padding: 8px;
+  font-weight: 700;
+}
+
 .inforArea .infoTipo {
   display: flex;
   padding: 10px;

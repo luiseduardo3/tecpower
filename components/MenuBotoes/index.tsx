@@ -5,7 +5,9 @@ import Despesa from "./despesa.svg";
 import Perfil from "./perfil.svg";
 import Home from "./home.svg";
 import Image from "next/image";
-import Duvidas from "./duvida.svg";
+import Confi from "./confi.svg";
+
+import Analitic from './analitic.svg'
 import { useState } from "react";
 import Link from "next/link";
 
@@ -16,7 +18,7 @@ const MenuBotoes = () => {
     <div className={styles.navigation}>
       <ul>
         <li className={styles.list}>
-          <Link href="/">
+          <Link href="/store">
             <span className={styles.icon}>
               <Image src={Home} alt="" />
             </span>
@@ -24,11 +26,11 @@ const MenuBotoes = () => {
           </Link>
         </li>
         <li className={styles.list}>
-          <Link href="/perfil">
+          <Link href="/servico">
             <span className={styles.icon}>
-              <Image src={Perfil} alt="" />
+              <Image src={Despesa} alt="" />
             </span>
-            <span className={styles.texto}>Perfil</span>
+            <span className={styles.texto}>Adicionar</span>
           </Link>
         </li>
         <li className={styles.list}>
@@ -40,20 +42,19 @@ const MenuBotoes = () => {
           </Link>
         </li>
         <li className={styles.list}>
-          <Link href="/servico">
+          <Link href="/relatorio">
             <span className={styles.icon}>
-              <Image src={Despesa} alt="" />
+              <Image src={Analitic} alt="" />
             </span>
-            <span className={styles.texto}>Adicionar</span>
+            <span className={styles.texto}>Relatorio</span>
           </Link>
         </li>
-
         <li className={styles.list}>
-          <Link href="/duvidas">
+          <Link href="/config">
             <span className={styles.icon}>
-              <Image src={Duvidas} alt="" />
+              <Image src={Confi} alt="" />
             </span>
-            <span className={styles.texto}>Duvidas</span>
+            <span className={styles.texto}>Configura</span>
           </Link>
         </li>
       </ul>
