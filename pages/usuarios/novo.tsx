@@ -1,6 +1,8 @@
-export const Teste = () => {
+const Teste = () => {
   
 }
+
+export default Teste;
 
 // import Head from "next/head";
 

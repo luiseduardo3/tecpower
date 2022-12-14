@@ -1,6 +1,8 @@
-export const Teste = () => {
+const Teste = () => {
   
 }
+
+export default Teste;
 
 // // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 // import type { NextApiRequest, NextApiResponse } from "next";

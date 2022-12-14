@@ -1,6 +1,8 @@
-export const Teste = () => {
+const Teste = () => {
   
 }
+
+export default Teste;
 
 // import { NextApiHandler } from "next";
 // import { getSession } from "next-auth/react";
