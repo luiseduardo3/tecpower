@@ -11,6 +11,8 @@ import Tema from './tema.svg'
 
 import Chat from './chat.svg'
 
+import Termo from './termo.svg'
+
 
 export const ConfigLayout = () => {
   return (
@@ -56,13 +58,13 @@ export const ConfigLayout = () => {
                 </li>
                 <li>
                   <Link href="/config">
-                       <Image src={Perfil} alt="" />
+                       <Image src={Termo} alt="" />
                        <span className={styles.texto}>Termos de uso</span>
                   </Link>
                 </li>
                 <li>
                   <Link href="/config">
-                       <Image src={Perfil} alt="" />
+                       <Image src={Termo} alt="" />
                        <span className={styles.texto}>Politica de Privacidade</span>
                   </Link>
                 </li>

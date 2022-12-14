@@ -31,7 +31,7 @@ const PerfilLayout = () => {
           <h3>Data Nascimento : </h3> <h4>03/10/1998</h4>
         </div>
         <div className={styles.InfoEmail}>
-          <h3>seu e-mail : </h3> <h4>luis@gmail.com</h4>
+          <h3>seu e-mail : </h3> <h4>luisa@gmail.com</h4>
         </div>
         <div className={styles.InfoEmail}>
           <h3>Telefone/Whats : </h3> <h4>(88)988888888</h4>

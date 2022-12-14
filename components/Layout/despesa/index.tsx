@@ -13,7 +13,7 @@ export const DespesaLayout = () => {
 
       <div className={styles.listas}>
         <h3># DESPESAS</h3>
-        <Link href={"/nova-lista"}>ADICIONAR NOVA</Link>
+        <Link href={"/nova-despesa"}>ADICIONAR NOVA</Link>
         <ul className={styles.ul}>
           <li className={styles.li}>
             1 - 10 Pães{" "}

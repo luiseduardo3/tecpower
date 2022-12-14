@@ -9,7 +9,7 @@ type Props = {
   value?: string;
   onChange: (newValue: string) => void;
   password?: boolean;
-  type: "text" | "email" | "password" | "checkbox" | "date";
+  type: "text" | "email" | "password" | "checkbox" | "date" | "number";
 };
 export const InputField = ({
   color,
@@ -32,6 +32,7 @@ export const InputField = ({
       <input
         // type={password ? (mostrarPassword ? "text" : "password") : "text"}
         type={type}
+        // type={"checkbox"}
         className={styles.input}
         placeholder={placeholder}
         onChange={(e) => onChange(e.target.value)}

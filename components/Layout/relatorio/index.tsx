@@ -42,9 +42,7 @@ export const RelatorioLayout = () => {
             <option className={styles.option} value="estudante">
               DESAFIOS CONCLUÍDOS
             </option>
-            <option className={styles.option} value="empreededor">
-              EMPREEDEDOR
-            </option>
+            
           </select>
           </div>
   
