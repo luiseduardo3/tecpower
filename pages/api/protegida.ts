@@ -1,16 +1,20 @@
-import { NextApiHandler } from "next";
-import { getSession } from "next-auth/react";
+export const Teste = () => {
+  
+}
 
-const handler: NextApiHandler = async (req, res) => {
-  const sesion = await getSession({ req });
+// import { NextApiHandler } from "next";
+// import { getSession } from "next-auth/react";
 
-  if (!sesion) {
-    res.json({ message: "Acesso negado" });
+// const handler: NextApiHandler = async (req, res) => {
+//   const sesion = await getSession({ req });
 
-    return;
-  }
+//   if (!sesion) {
+//     res.json({ message: "Acesso negado" });
 
-  res.json({ message: "Você tem acesso a essa rota", sesion });
-};
+//     return;
+//   }
 
-export default handler;
+//   res.json({ message: "Você tem acesso a essa rota", sesion });
+// };
+
+// export default handler;

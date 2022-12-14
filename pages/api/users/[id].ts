@@ -1,67 +1,71 @@
-import { NextApiHandler } from "next";
-import { Users } from "../../../utils/users";
-import prisma from "../../../libs/prisma";
-import api from "../../../libs/api";
+export const Teste = () => {
+  
+}
 
-//ler a informação do usuario
-const handlerGet: NextApiHandler = async (req, res) => {
-  console.log(req.query, "aqui");
-  const { id } = req.query;
+// import { NextApiHandler } from "next";
+// import { Users } from "../../../utils/users";
+// import prisma from "../../../libs/prisma";
+// import api from "../../../libs/api";
 
-  const user = await api.getUser(parseInt(id as string));
+// //ler a informação do usuario
+// const handlerGet: NextApiHandler = async (req, res) => {
+//   console.log(req.query, "aqui");
+//   const { id } = req.query;
 
-  if (user) {
-    res.json({ status: true, user });
-    return;
-  }
+//   const user = await api.getUser(parseInt(id as string));
 
-  res.json({ error: "Usuario não encontado" });
-};
+//   if (user) {
+//     res.json({ status: true, user });
+//     return;
+//   }
 
-const handlerPut: NextApiHandler = async (req, res) => {
-  const { name, ativo, carteira, nivel } = req.body;
-  const { id } = req.query;
+//   res.json({ error: "Usuario não encontado" });
+// };
 
-  const updateUser = await api.updateUser(
-    parseInt(id as string),
-    name,
-    ativo,
-    carteira,
-    nivel
-  );
+// const handlerPut: NextApiHandler = async (req, res) => {
+//   const { name, ativo, carteira, nivel } = req.body;
+//   const { id } = req.query;
 
-  if (updateUser) {
-    res.json({ status: true, user: updateUser });
-    return;
-  }
-  res.json({ error: "Não foi possivel alterar este usuário" });
-};
+//   const updateUser = await api.updateUser(
+//     parseInt(id as string),
+//     name,
+//     ativo,
+//     carteira,
+//     nivel
+//   );
 
-const handlerDelete: NextApiHandler = async (req, res) => {
-  const { id } = req.query;
+//   if (updateUser) {
+//     res.json({ status: true, user: updateUser });
+//     return;
+//   }
+//   res.json({ error: "Não foi possivel alterar este usuário" });
+// };
 
-  const deleteUser = await api.deleteUser(parseInt(id as string)).catch(() => {
-    res.json({ error: "Usuário não encontrado" });
-  });
+// const handlerDelete: NextApiHandler = async (req, res) => {
+//   const { id } = req.query;
 
-  if (deleteUser) {
-    res.json({ status: true });
-  }
-};
+//   const deleteUser = await api.deleteUser(parseInt(id as string)).catch(() => {
+//     res.json({ error: "Usuário não encontrado" });
+//   });
 
-const handler: NextApiHandler = async (req, res) => {
-  switch (req.method) {
-    case "GET":
-      handlerGet(req, res);
-      break;
+//   if (deleteUser) {
+//     res.json({ status: true });
+//   }
+// };
 
-    case "PUT":
-      handlerPut(req, res);
-      break;
-    case "DELETE":
-      handlerDelete(req, res);
-      break;
-  }
-};
+// const handler: NextApiHandler = async (req, res) => {
+//   switch (req.method) {
+//     case "GET":
+//       handlerGet(req, res);
+//       break;
 
-export default handler;
+//     case "PUT":
+//       handlerPut(req, res);
+//       break;
+//     case "DELETE":
+//       handlerDelete(req, res);
+//       break;
+//   }
+// };
+
+// export default handler;

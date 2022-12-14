@@ -1,51 +1,55 @@
-import { NextApiHandler } from "next";
-import { Users } from "../../../utils/users";
-import prisma from "../../../libs/prisma";
-import api from "../../../libs/api";
+export const Teste = () => {
+  
+}
 
-// GET mostre todos usuarios
-const handlerGet: NextApiHandler = async (req, res) => {
-  // const users = await prisma.usuario.findMany(); //assim pega tudo
+// import { NextApiHandler } from "next";
+// import { Users } from "../../../utils/users";
+// import prisma from "../../../libs/prisma";
+// import api from "../../../libs/api";
 
-  const { page } = req.query;
+// // GET mostre todos usuarios
+// const handlerGet: NextApiHandler = async (req, res) => {
+//   // const users = await prisma.usuario.findMany(); //assim pega tudo
 
-  const users = await api.getPegarTodosUser(parseInt(page as string)); // ta vindo de libs/api
+//   const { page } = req.query;
 
-  res.json({ status: true, usuarios: users });
-};
+//   const users = await api.getPegarTodosUser(parseInt(page as string)); // ta vindo de libs/api
 
-//POST iserindo usuarios
-const handlerPost: NextApiHandler = async (req, res) => {
-  const { name, idade, estado, cidade, email, senha, carteira, nivel } =
-    req.body;
+//   res.json({ status: true, usuarios: users });
+// };
 
-  const novoUser = await api
-    .addUser(name, idade, estado, cidade, email, senha, carteira, nivel)
-    .catch(() => {
-      res.json({ error: "E-mail já existe" }); // se de errado
-    });
+// //POST iserindo usuarios
+// const handlerPost: NextApiHandler = async (req, res) => {
+//   const { name, idade, estado, cidade, email, senha, carteira, nivel } =
+//     req.body;
 
-  if (novoUser) {
-    res.status(201).json({ status: true, user: novoUser }); // se der certo
-  }
-};
+//   const novoUser = await api
+//     .addUser(name, idade, estado, cidade, email, senha, carteira, nivel)
+//     .catch(() => {
+//       res.json({ error: "E-mail já existe" }); // se de errado
+//     });
 
-const handlerPut: NextApiHandler = async (req, res) => {
-  res.json({ status: "put" });
-};
+//   if (novoUser) {
+//     res.status(201).json({ status: true, user: novoUser }); // se der certo
+//   }
+// };
 
-const handler: NextApiHandler = (req, res) => {
-  switch (req.method) {
-    case "GET":
-      handlerGet(req, res);
-      break;
-    case "POST":
-      handlerPost(req, res);
-      break;
-    case "PUT":
-      handlerPut(req, res);
-      break;
-  }
-};
+// const handlerPut: NextApiHandler = async (req, res) => {
+//   res.json({ status: "put" });
+// };
 
-export default handler;
+// const handler: NextApiHandler = (req, res) => {
+//   switch (req.method) {
+//     case "GET":
+//       handlerGet(req, res);
+//       break;
+//     case "POST":
+//       handlerPost(req, res);
+//       break;
+//     case "PUT":
+//       handlerPut(req, res);
+//       break;
+//   }
+// };
+
+// export default handler;
