@@ -1,4 +1,4 @@
-import { Despesa } from "./Despesa";
+
 import { User } from "./User";
 
 export type AuthUser = User & {
