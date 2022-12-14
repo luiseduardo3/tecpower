@@ -27,7 +27,6 @@ export const NovaListaLAyout = () => {
       <div className={styles.header} style={{ color: "#004aad" }}>
         LISTA | ATIVIDADE
       </div>
-      {/* <div className={styles.linha}></div> */}
 
       <div className={styles.formArea}>
         <div className={styles.inputArea}>
@@ -53,12 +52,12 @@ export const NovaListaLAyout = () => {
 
 
         <div className={styles.inputArea}>
-            <label className={styles.agenda} htmlFor="">Data "Opcional"</label>
+            <label className={styles.agenda} htmlFor="">Data (Opcional)</label>
           
           <input type="date" />
         </div>
         <div className={styles.inputArea}>
-            <label className={styles.agenda} htmlFor="">Adicionar ao Google Agenda "Opcional"</label>
+            <label className={styles.agenda} htmlFor="">Adicionar ao Google Agenda (Opcional)</label>
           
           <input type="checkbox" />
         </div>
