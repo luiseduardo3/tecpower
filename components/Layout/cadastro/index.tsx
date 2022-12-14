@@ -3,7 +3,6 @@ import Link from "next/link";
 import Router from "next/router";
 import { useState } from "react";
 import { Botao } from "../../Botao";
-import { Header } from "../../Header";
 import { InputField } from "../../InputField";
 import MenuBotoes from "../../MenuBotoes";
 
