@@ -66,8 +66,8 @@ export const LoginLayout = () => {
 
       <div className={styles.esqueciArea} style={{ borderColor: "#004aad" }}>
         Esqueceu sua senha?
-        <Link legacyBehavior href={`/recuperar-senha`}>
-          <a style={{ color: "#004aad" }}>clique aqui</a>
+        <Link style={{ color: "#004aad" }} href={`/recuperar-senha`}>
+          clique aqui
         </Link>
       </div>
 

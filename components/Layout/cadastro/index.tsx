@@ -131,8 +131,8 @@ const CadastroLayout = () => {
 
       <div className={styles.JaTemArea} style={{ borderColor: "#004aad" }}>
         Já tem cadastro?
-        <Link legacyBehavior href={`/login2`}>
-          <a style={{ color: "#004aad" }}>Fazer Login</a>
+        <Link style={{ color: "#004aad" }} href={`/login2`}>Fazer Login
+          
         </Link>
       </div>
     </div>
