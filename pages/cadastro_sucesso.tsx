@@ -8,7 +8,7 @@ import styles from "../styles/CadastroSu.module.css";
 
 const CadastroSucesso = () => {
   const handleSubmit = () => {
-    Router.push("/login2");
+    Router.push("/login");
   };
 
   return (
