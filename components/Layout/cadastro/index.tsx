@@ -107,7 +107,7 @@ const CadastroLayout = () => {
               PADRÃO
             </option>
             <option className={styles.option} value="estudante">
-              ESTUDANDE
+              ESTUDANTE
             </option>
             <option className={styles.option} value="empreededor">
               EMPREEDEDOR
