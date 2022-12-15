@@ -130,7 +130,7 @@ const CadastroLayout = () => {
 
       <div className={styles.JaTemArea} style={{ borderColor: "#004aad" }}>
         Já tem cadastro?
-        <Link style={{ color: "#004aad" }} href={`/login2`}>Fazer Login
+        <Link style={{ color: "#004aad" }} href={`/login`}>Fazer Login
           
         </Link>
       </div>
